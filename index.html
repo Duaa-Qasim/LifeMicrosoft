@@ -1,276 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Secure Life</title>
-  <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
-  scroll-behavior: smooth;
-}
-h1{
-     display: inline-block;
-     color: black;
-}
-  .parent{
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      padding: 2.5px;
-      background-color: #1f8c8c; 
-  }
-button{
-    border-radius: 20px;
-    font-size: 20px;
-    font-weight: 200;
-    padding: 10px 20px;
-    border: none;
-    background-color: rgb(74, 80, 114);
-    color: white;
-    cursor: pointer;
-}
-.hero {
-  padding: 40px 20px;
-  text-align: left; 
-  max-width: 700px;
-  margin: 0 auto;   
-}
-
-.hero h2 {
-  color: #264653;
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  color: #2a9d8f;
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.book-now {
-  padding: 10px 20px;
-  background-color: #e63946;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 12px;
-}
-
-@media (max-width: 600px) {
-  .hero {
-    padding: 20px 15px;
-  }
-
-  .hero h2 {
-    font-size: 20px;
-  }
-
-  .book-now {
-    font-size: 14px;
-  }
-}
-body
-{
-  overflow-x: hidden;
-  background-color: #fff;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  color: #cdcdcd;
-  font-family: "Avenir Next", "Avenir", sans-serif;
-}
-
-main {
-  width: calc(100% - 240px);
-  max-width: 680px;
-  margin: 100px auto;
-}
-
-p {
-  font-size: 18px;
-  line-height: 28px;
-}
-#menuToggle
-{
-  display: block;
-  position: fixed;
-  top: 50px;
-  left: 50px;
-
-  z-index: 1;
-  
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-#menuToggle a
-{
-  text-decoration: none;
-  color: #232323;
-  
-  transition: color 0.3s ease;
-}
-
-#menuToggle a:hover
-{
-  color: tomato;
-}
-
-
-#menuToggle input
-{
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  left: -5px;
-  
-  cursor: pointer;
-  
-  opacity: 0; 
-  z-index: 2; 
-  
-  -webkit-touch-callout: none;
-}
-
-#menuToggle span
-{
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  position: relative;
-  
-  background: #cdcdcd;
-  border-radius: 3px;
-  
-  z-index: 1;
-  
-  transform-origin: 4px 0px;
-  
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;
-}
-
-#menuToggle span:first-child
-{
-  transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2)
-{
-  transform-origin: 0% 100%;
-}
-
-#menuToggle input:checked ~ span
-{
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
-}
-
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
-#menu
-{
-  position: absolute;
-  max-width: 300px;
-  width: 90vw;
-  max-height: 100vh;
-  margin: -100px 0 0 -50px;
-  padding: 50px;
-  padding-top: 125px;
-  box-sizing: border-box;
-  overflow-y: auto;
-  background: #ededed;
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  
-  transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
-  
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-}
-
-#menu li
-{
-  padding: 10px 0;
-  font-size: 22px;
-}
-
-#menu li label
-{
-  cursor: pointer;
-}
-
-#menuToggle input:checked ~ ul
-{
-  transform: none;
-}
- p2{
-  font-size: small;
-  color: #2a9d8f;
-
-}
-    
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medify</title>
 </head>
-<body>
-     <h1>Secure Life</h1>
-<nav role="navigation">
-  <div id="menuToggle">
-    <input type="checkbox" id="menuCheckbox" />
-    <span></span>
-    <span></span>
-    <span></span>
-    <ul id="menu">
-      <li><label for="menuCheckbox"><a>Home</a></label></li>
-      <li><label for="menuCheckbox"><a>Doctor Consultation</a></label></li>
-      <li><label for="menuCheckbox"><a>Diagnostics</a></label></li>
-      <li><label for="menuCheckbox"><a>Home Care</a></label></li>
-      <li><label for="menuCheckbox"><a>Physio</a></label></li>
-      <li><label for="menuCheckbox"><a>Radiology</a></label></li>
-      <li><label for="menuCheckbox"><a>Medical Equipment</a></label></li>
-      <li><label for="menuCheckbox"><a>Surgery</a></label></li>
-      <li><label for="menuCheckbox"><a>About Us</a></label></li>
-    </ul>
-  </div>
-  <div class="parent">
-    <button>Ambulance Service</button>
-    <button>Online Doctor</button>
-  </div>
-  
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-text">
-      <h2>Doctor Visit at Home</h2>
-      <p>Doctor Consultation at home starts from <strong>Fees.500</strong></p>
-      <button class="btn book-now">Book Now</button>
-    </div>
-<div class="box">
-  <h1>A Doctor Visit At Home</h1>
-<p2>A doctor visit at home is a convenient healthcare service where a qualified medical professional comes directly to a patient's residence to provide medical consultation and treatment. This service is especially beneficial for elderly patients, those with limited mobility, or individuals recovering from surgery or illness who find it difficult to visit a clinic or hospital. It offers personalized care in the comfort of one’s home, reduces exposure to infections in crowded waiting areas, and ensures timely medical attention. Home visits can include general checkups, chronic illness management, wound care, and even diagnostic tests, making it a safe and efficient alternative to traditional healthcare settings.
-</p2>
-</div>
+<style>
+    /* Reset */
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family: Arial, sans-serif; line-height:1.6; color:#333;}
 
-  
+html, body {
+  overflow-x: hidden;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 25px;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  background: #9c1414;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .3s;
+}
+.btns:hover {background:#563a6d;
+transform: scale(1.05);
+}
+.book-now:hover{
+  background-color: red;
+  transform: scale(1.05);
+}
+
+/* Header */
+.header {
+  background:#fff;
+  padding:10px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #eee;
+}
+.logo {height:60px;}
+.nav {display:flex; align-items:center;}
+.nav-links {
+  display:flex; list-style:none; gap:20px;
+}
+.nav-links li a {
+  color:#000; text-decoration:none; font-weight:500;
+}
+
+/* Hamburger */
+.hamburger {
+  display:none;
+  position:relative;
+  font-size:30px;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+.hamburger summary {
+  list-style:none;
+  border:none;
+  background:none;
+  cursor:pointer;
+}
+.hamburger summary::-webkit-details-marker {display:none;}
+
+/* Overlay menu */
+.overlay {
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(44,44,84,0.95);
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+.hamburger[open] .overlay {display:flex;}
+.overlay ul {list-style:none; text-align:center;}
+.overlay li {margin:20px 0;}
+.overlay a {
+  font-size:28px;
+  color:#fff;
+  text-decoration:none;
+}
+.overlay a:hover {color:#ff7b54;}
+
+/* CTA bar */
+.cta-bar {
+  background:#f1ed002d;
+  padding:10px;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+}
+
+/* Hero */
+.hero {
+  background:url("bnr.jpg") center/cover no-repeat;
+  height:500px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:#039c17b4;
+  gap:20px;
+}
+.hero h1 {font-size:48px;}
+.hero p {font-size:20px;}
+
+/* Section */
+.content{
+  padding: 40px 20px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:#050505;
+  gap:20px;
+}
+/* Footer */
+.footer {
+  background:#2c2c54;
+  color:#fff;
+  padding:40px 20px;
+}
+.footer-container {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+  max-width:1200px;
+  margin:auto;
+}
+.footer-section {flex:1; min-width:250px; margin:20px;}
+.footer-section h3 {margin-bottom:15px;}
+.footer-section ul {list-style:none;}
+.footer-section ul li {margin:8px 0;}
+.footer-section ul li img {width:20px; margin-right:8px; vertical-align:middle;}
+.social-icons img {width:25px; margin:5px;}
+
+/* Responsive */
+@media (max-width:768px) {
+  .nav-links {display:none;}
+  .hamburger {display:block;}
+}
+
+/* Small text */
+.small-text {
+  font-size: 14px;
+  color: #2a9d8f;
+  text-align: center;
+  padding: 10px;
+  max-width: 900px;
+}
+
+.btns {
+  border-radius: 25px;
+  font-size: 16px;
+  padding: 12px 24px;   /* bigger tap area */
+  border: none;
+  background: #057692;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .3s;
+  display: inline-block;
+  text-align: center;
+}
+
+/* hover for desktop, active for mobile */
+.btns:hover {background:#563a6d;}
+.btns:active {background:#4a2e5a;}
+
+/* Mobile tweaks */
+@media (max-width:768px) {
+  .btns {
+    font-size: 14px;    /* slightly bigger text */
+    padding: 4px;;
+  }
+}
+
+</style>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <img src="logo.png" alt="Medify Logo" class="logo">
+        <!-- Navbar -->
+        <nav class="nav">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Diagnostics</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <!-- Hamburger -->
+            <details class="hamburger">
+                <summary>&#9776;</summary>
+                <div class="overlay">
+                   <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./diagnostics.html">Diagnostics</a></li>
+                        <li><a href="./services.html">Services</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </details>
+        </nav>
+    </header>
+    <!--Main-->
+    <main>
+    <!--  Buttons -->
+    <div class="cta-bar">
+        <a href="#" class="btns">Ambulance Service</a>
+        <a href="#" class="btns">Online Doctor</a>
+    </div>
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Welcome to Medify</h1>
+        <p>Your health is our priority</p>
+    </section>
+    <!-- Content -->
+    <section class="content">
+        <h2>Doctor Visit at Home</h2>
+        <p>Doctor Consultation at home starts from <strong>Fees.500</strong></p>
+        <button class="btn book-now">Book Now</button>
+
+        <div>
+            <h2>A Doctor Visit At Home</h2>
+            <p class="small-text">
+                A doctor visit at home is a convenient healthcare service where a qualified medical professional comes
+                directly to a patient's residence.
+                This service is especially beneficial for elderly patients, those with limited mobility, or individuals
+                recovering from surgery or illness.
+                It offers personalized care in the comfort of one's home, reduces exposure to infections in crowded
+                waiting areas, and ensures timely medical attention.
+            </p>
+    </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <a href="#"><img src="logo.png" alt="Medify" width="141" height="72"></a>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <span>@Medify 2025</span>
+            </div>
+            <div class="footer-section">
+                <h3>SERVICES</h3>
+                <ul>
+                    <li>Lorem Ipsum</li>
+                    <li>Lorem</li>
+                    <li>Lorem Ipsum Dolor</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>USEFUL LINKS</h3>
+                <ul>
+                    <li>Lorem Ipsum</li>
+                    <li>Lorem</li>
+                    <li>Lorem Ipsum Dolor</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>CONTACTS</h3>
+                <ul>
+                    <li><img src="phone.png" alt="phone"> +92(304) 386-6719</li>
+                    <li><img src="phone.png" alt="phone"> +92(317) 011-3001</li>
+                    <li><img src="s.png" alt="email"> info@website.com</li>
+                </ul>
+                <div class="social-icons">
+                    <img src="f.png" alt="Facebook">
+                    <img src="tw.png" alt="Twitter">
+                    <img src="g+.png" alt="Google+">
+                    <img src="t.png" alt="Tumblr">
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
